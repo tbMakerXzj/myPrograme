@@ -1,0 +1,8 @@
+.layoutWrapper {
+  height: 100vh;
+}
+
+.layoutRight {
+  padding: 24px;
+  background-color: #eee;
+}
