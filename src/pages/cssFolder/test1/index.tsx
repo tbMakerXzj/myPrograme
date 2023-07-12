@@ -7,7 +7,7 @@ const test1 = () => {
       <ModuleWrapper>
         <div className={style.test}>
           <div className={style.bg }/>
-          <div className={style.text} >传媒案例</div>
+          <div className={style.text} >传媒案例1</div>
         </div>
       </ModuleWrapper>
       <ModuleWrapper>21312</ModuleWrapper>
