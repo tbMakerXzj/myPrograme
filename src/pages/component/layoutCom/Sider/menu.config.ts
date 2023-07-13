@@ -5,7 +5,7 @@ export const pathConfig: ICommonObj = {
   dashboard: "/dashboard",
   test1: "/test1",
   ts1: "/ts1",
-  test222: "/test222",
+  js1: "/js1",
 };
 
 // 菜单配置
@@ -42,17 +42,17 @@ export const menuConfig: IMenuConfig[] = [
       },
     ],
   },
-  // {
-  //   key: "test111",
-  //   name: "测试",
-  //   icon: "HddOutlined",
-  //   children: [
-  //     {
-  //       key: "test222",
-  //       name: "测试2",
-  //       icon: null,
-  //       children: [],
-  //     },
-  //   ],
-  // },
+  {
+    key: "JS",
+    icon: "HeatMapOutlined",
+    name: "JS",
+    children: [
+      {
+        key: "js1",
+        icon: null,
+        children: [],
+        name: "js1",
+      },
+    ],
+  },
 ];

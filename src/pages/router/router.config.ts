@@ -26,4 +26,14 @@ export const routerConfig: RouterConfig[] = [
       },
     ],
   },
+  {
+    path: "/js1",
+    exatc: false,
+    children: [
+      {
+        path: "",
+        component: lazy(() => import("../jsFolder/js1")),
+      },
+    ],
+  },
 ];
