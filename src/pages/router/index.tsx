@@ -9,7 +9,7 @@ import { Suspense } from "react";
 import { routerConfig } from "./router.config";
 import { RouterConfig } from "../types/common";
 
-function Router() {  
+function Router() {
   const getRouter = (config: RouterConfig[]) => {
     const handleArr: any = [];
     handleRouter(config, handleArr, "");
@@ -40,7 +40,7 @@ function Router() {
   return (
     <Layout className="layoutWrapper">
       <Header />
-      <Layout>
+      <Layout className="container">
         <Sider />
         <Layout className="layoutRight">
           <Suspense
@@ -52,12 +52,7 @@ function Router() {
           >
             <Routes>
               {getRouter(routerConfig)}
-              {/* {
-                <Route
-                  path="/"
-                  element={<Navigate replace to={"/dashboard"} />}
-                />
-              } */}
+
               <Route path="*" element={<Navigate to="/dashboard" />} />
             </Routes>
           </Suspense>

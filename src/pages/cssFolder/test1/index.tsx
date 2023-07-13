@@ -1,18 +1,7 @@
-import ModuleWrapper from "../../component/moduleWrapper";
-import style from "./index.module.css";
+import WidthHeight from "./component/widthHeight";
 
 const test1 = () => {
-  return (
-    <div className={style.wrapper}>
-      <ModuleWrapper>
-        <div className={style.test}>
-          <div className={style.bg }/>
-          <div className={style.text} >传媒</div>
-        </div>
-      </ModuleWrapper>
-      <ModuleWrapper>21312</ModuleWrapper>
-    </div>
-  );
+  return <WidthHeight />;
 };
 
 export default test1;

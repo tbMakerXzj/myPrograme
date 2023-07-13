@@ -80,7 +80,7 @@ const SiderBar: React.FC = () => {
           }
         });
       }
-    });    
+    });
   }, [local.pathname]);
 
   return (
@@ -90,7 +90,7 @@ const SiderBar: React.FC = () => {
       theme="light"
       trigger={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       onCollapse={setCollapsed}
-      // style={{ overflowY: "scroll", marginBottom: 48 }}
+      style={{ height: "100%", overflow: "auto" }}
     >
       <Menu
         mode="inline"
