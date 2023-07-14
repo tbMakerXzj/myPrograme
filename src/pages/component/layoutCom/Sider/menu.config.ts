@@ -3,7 +3,8 @@ import { ICommonObj, IMenuConfig } from "../../../types/common";
 // 路由配置
 export const pathConfig: ICommonObj = {
   dashboard: "/dashboard",
-  test1: "/test1",
+  css1: "/css1",
+  css2: "/css2",
   ts1: "/ts1",
   js1: "/js1",
 };
@@ -22,10 +23,16 @@ export const menuConfig: IMenuConfig[] = [
     name: "CSS",
     children: [
       {
-        key: "test1",
+        key: "css1",
         icon: null,
         children: [],
         name: "测试1",
+      },
+      {
+        key: "css2",
+        icon: null,
+        children: [],
+        name: "测试2",
       },
     ],
   },

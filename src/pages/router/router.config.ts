@@ -6,8 +6,9 @@ export const routerConfig: RouterConfig[] = [
     path: "/dashboard",
     component: lazy(() => import("../dashboard")),
   },
+  // css
   {
-    path: "/test1",
+    path: "/css1",
     exatc: false,
     children: [
       {
@@ -16,6 +17,17 @@ export const routerConfig: RouterConfig[] = [
       },
     ],
   },
+  {
+    path: "/css2",
+    exatc: false,
+    children: [
+      {
+        path: "",
+        component: lazy(() => import("../cssFolder/css2")),
+      },
+    ],
+  },
+  // ts
   {
     path: "/ts1",
     exatc: false,
@@ -26,6 +38,7 @@ export const routerConfig: RouterConfig[] = [
       },
     ],
   },
+  // js
   {
     path: "/js1",
     exatc: false,
