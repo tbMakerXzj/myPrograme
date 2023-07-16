@@ -3,7 +3,7 @@ import ModuleWrapper from "../../component/moduleWrapper";
 const arr = [
   { a: 1, b: 2 },
   { a: 1, b: 2 },
-  { a: 1, c: undefined },
+  { a: 1, c: 2 },
 ];
 
 const JS1: React.FC = () => {

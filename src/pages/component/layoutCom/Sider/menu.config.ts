@@ -51,7 +51,7 @@ export const menuConfig: IMenuConfig[] = [
   },
   {
     key: "JS",
-    icon: "HeatMapOutlined",
+    icon: "BuildOutlined",
     name: "JS",
     children: [
       {
