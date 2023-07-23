@@ -36,7 +36,32 @@ const Css2Component = () => {
           quo animi.
         </p>
       </ModuleWrapper>
-      <ModuleWrapper width={100}>123</ModuleWrapper>
+      <ModuleWrapper>
+        <div className={style.container}>
+          <div className={style.left}>left</div>
+          <div className={style.right}>right</div>
+        </div>
+      </ModuleWrapper>
+      <ModuleWrapper>
+        <button className={style.borderBtn}>边框按钮</button>
+      </ModuleWrapper>
+      <ModuleWrapper>
+        <div className={style.container1}>
+          <div className={style.drop}></div>
+          <div className={style.drop}></div>
+          <div className={style.drop}></div>
+          <div className={style.drop}></div>
+          <div className={style.boxWrapper}>
+            <div className={style.box1}></div>
+            <div className={style.box1}></div>
+            <div className={style.box1}></div>
+            <div className={style.box1}></div>
+          </div>
+          <div className={style.cup}></div>
+        </div>
+        {/* <div className={style.container2}>
+        </div> */}
+      </ModuleWrapper>
     </>
   );
 };

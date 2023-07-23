@@ -49,4 +49,15 @@ export const routerConfig: RouterConfig[] = [
       },
     ],
   },
+  // problem
+  {
+    path: "/problem",
+    exatc: false,
+    children: [
+      {
+        path: "",
+        component: lazy(() => import("../problem")),
+      },
+    ],
+  },
 ];

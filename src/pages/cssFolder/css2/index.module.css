@@ -20,3 +20,162 @@
   -webkit-line-clamp: 5;
   overflow: hidden;
 }
+
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.left {
+  width: 300px;
+  background-color: antiquewhite;
+}
+
+.right {
+  flex: 1 0 auto;
+  background-color: aqua;
+}
+
+.borderBtn {
+  border: none;
+  padding: 12px 24px;
+  /* outline: 4px solid #ccc; */
+  background-color: #000;
+  color: rgb(36, 125, 226);
+  border-radius: 4px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.borderBtn::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-color: rgb(36, 125, 226);
+  z-index: -2;
+  left: 50%;
+  top: 50%;
+  animation: rotation 3s linear infinite;
+  transform-origin: 0 0;
+}
+
+.borderBtn::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background-color: #000;
+  left: 5px;
+  top: 5px;
+  z-index: -1;
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #000;
+  height: 460px;
+  position: relative;
+  filter: contrast(50);
+  padding-bottom: 24px;
+}
+
+.boxWrapper {
+  top: 358px;
+  position: absolute;
+  animation: changePos 10s ease-in-out infinite;
+}
+
+.box1 {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  float: left;
+  animation: ro 3s linear infinite;
+  filter: blur(12px);
+}
+
+@keyframes ro {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cup {
+  width: 336px;
+  height: 86px;
+  position: absolute;
+  left: calc(50% - 168px);
+  top: 368px;
+  border-radius: 20px;
+  background-color: #fff;
+  animation: heightChange 10s ease-in-out infinite;
+}
+
+.drop {
+  background-color: #fff;
+  width: 45px;
+  height: 60px;
+  filter: blur(12px);
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 22.5px);
+  top: 40px;
+}
+
+.drop:nth-child(1) {
+  animation: dr 1s ease-in-out infinite;
+}
+
+.drop:nth-child(2) {
+  animation: dr 1s ease-in-out 0.3s infinite;
+}
+
+.drop:nth-child(3) {
+  animation: dr 1s ease-in-out 0.6s infinite;
+}
+
+.drop:nth-child(4) {
+  animation: dr 1s ease-in-out 0.9s infinite;
+}
+
+@keyframes dr {
+  from {
+    top: 40px;
+  }
+  to {
+    top: 340px;
+  }
+}
+
+@keyframes heightChange {
+  from {
+    top: 368px;
+    height: 86px;
+  }
+  to {
+    top: 240px;
+    height: 214px;
+  }
+}
+
+@keyframes changePos {
+  from {
+    top: 358px;
+  }
+  to {
+    top: 230px;
+  }
+}
