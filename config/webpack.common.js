@@ -9,6 +9,7 @@ module.exports = {
     entry: {
         app: path.join(__dirname, '../src/index.tsx')
     },
+    mode:'development',
     output: {
         path: path.join(__dirname, '../dist'),
         filename: 'js/[name].[hash].js',
@@ -68,7 +69,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.scas|sass$/,
+                test: /\.scss|sass$/,
                 use: [
                     isEnvProduction ? 'style-loader' : 'style-loader',
                     {

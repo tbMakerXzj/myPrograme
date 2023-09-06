@@ -1,6 +1,12 @@
 {
 	// prettier规则使用当前目录的.prettierrc.js
 	"prettier.configPath": ".prettierrc.js",
+	"eslint.options": {
+		"extensions": [".js", ".jsx", ".ts", ".tsx","html"],
+	},
 	// 保存的时候自动格式化
-	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		// 保存时eslint格式化
+		"source.fixAll.eslint": true,
+	},
 }
