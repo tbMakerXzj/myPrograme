@@ -1,5 +1,6 @@
 import ModuleWrapper from "../../component/moduleWrapper";
 
+// import ModuleWrapper from "@/pages/component/moduleWrapper";
 import style from "./index.module.css";
 
 const Css2Component = () => {
