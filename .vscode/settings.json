@@ -5,8 +5,9 @@
 		"extensions": [".js", ".jsx", ".ts", ".tsx","html"],
 	},
 	// 保存的时候自动格式化
-	"editor.codeActionsOnSave": {
-		// 保存时eslint格式化
-		"source.fixAll.eslint": true,
-	},
+	// "editor.codeActionsOnSave": {
+	// 	// 保存时eslint格式化
+	// 	"source.fixAll.eslint": true,
+	// },
+	"editor.formatOnSave": true
 }

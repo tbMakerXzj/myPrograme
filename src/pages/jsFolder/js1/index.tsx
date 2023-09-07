@@ -1,9 +1,10 @@
-import ModuleWrapper from "../../component/moduleWrapper";
+import React from 'react';
+import ModuleWrapper from '../../component/moduleWrapper';
 
 const arr = [
   { a: 1, b: 2 },
   { a: 1, b: 2 },
-  { a: 1, c: 2 },
+  { a: 1, c: 2 }
 ];
 
 const JS1: React.FC = () => {
@@ -27,7 +28,7 @@ const JS1: React.FC = () => {
   };
 
   const isPrimitive = (val: any): boolean => {
-    return val === null || !["object", "function"].includes(typeof val);
+    return val === null || !['object', 'function'].includes(typeof val);
   };
 
   const equal = (val1: any, val2: any): boolean => {
