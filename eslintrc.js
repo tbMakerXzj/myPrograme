@@ -1,7 +1,7 @@
 module.exports = {
     parser: '@typescript-eslint/parser', // 解析器
     extends: ['plugin:prettier/recommended'], // 为了防止eslint和prettier的规则发生冲突
-    plugins:['@typescript-eslint','react-hooks','eslint-plugin-react'],//定义了该eslint文件所依赖的插件
+    plugins: ['@typescript-eslint', 'react-hooks', 'eslint-plugin-react'],//定义了该eslint文件所依赖的插件
     env: {
         browser: true, // 浏览器环境中的全局变量
         node: true, // Node.js 全局变量和 Node.js 作用域
@@ -9,8 +9,8 @@ module.exports = {
     settings: {
         // 自动发现React的版本，从而进行规范react代码
         react: {
-            pragma: 'React',
-            version:'detect',
+            pragma: "React",
+            version: 'detect',
         }
     },
     parserOptions: {
@@ -40,6 +40,8 @@ module.exports = {
                 // 可以接受字符串常量
                 requireStringLiterals: false
             }
-        ]
+        ],
+        "quotes": ["error", "double"],
+        "no-console": "warn"
     }
 }
