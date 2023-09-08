@@ -1,8 +1,10 @@
 import React from 'react';
-import ModuleWrapper from '../../component/moduleWrapper';
 
 // import ModuleWrapper from "@/pages/component/moduleWrapper";
 import style from './index.module.css';
+import ModuleWrapper from '@/pages/component/moduleWrapper';
+import bigImg from '@/pages/assets/1.png';
+import smallImg from '@/pages/assets/2.jpg';
 
 const Css2Component = () => {
   return (
@@ -53,7 +55,10 @@ const Css2Component = () => {
         </div> */}
       </ModuleWrapper>
       <ModuleWrapper>
-        <img src={require('../../assets/1.png')} alt="" />
+        <img src={bigImg} alt="" />
+      </ModuleWrapper>
+      <ModuleWrapper>
+        <img src={smallImg} alt="" />
       </ModuleWrapper>
     </>
   );
