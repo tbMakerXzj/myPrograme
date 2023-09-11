@@ -1,8 +1,8 @@
 // import ModuleWrapper from '../../../pages/component/moduleWrapper';
-import React from 'react';
-import ModuleWrapper from '@/pages/component/moduleWrapper';
+import React from "react";
+import ModuleWrapper from "@/pages/component/moduleWrapper";
 
-import styles from './index.module.less';
+import styles from "./index.module.less";
 // 联合类型
 
 const ts1: React.FC = () => {
