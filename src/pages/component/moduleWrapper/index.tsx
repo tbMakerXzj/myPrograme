@@ -1,7 +1,7 @@
-import React from 'react';
-import { ModuleWrapperProps } from '@/pages/types/common';
+import React from "react";
+import { ModuleWrapperProps } from "@/pages/types/common";
 
-import style from './index.module.css';
+import style from "./index.module.css";
 
 const ModuleWrapper: React.FC<ModuleWrapperProps> = ({ children, width }) => {
   return (
