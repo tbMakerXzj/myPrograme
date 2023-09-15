@@ -6,7 +6,7 @@ const isEnvProduction = process.env.NODE_ENV === "production";
 const imageInlineSizeLimit = 8 * 1024;
 
 const aliasPath = require("../tsconfig.json").compilerOptions.paths;
-const getStyleLoader = isEnvProduction ? "style-loader" : "style-loader";
+const getStyleLoader = isEnvProduction ? MiniCssExtractPlugin.loader : "style-loader";
 
 module.exports = {
   entry: path.join(__dirname, "../src/index.tsx"),
@@ -30,10 +30,10 @@ module.exports = {
               presets: [
                 [
                   "@babel/preset-env",
-                  // {
-                  //     "useBuiltIns": "usage",
-                  //     "corejs": 3,
-                  // }
+                  {
+                    useBuiltIns: "usage",
+                    corejs: 3,
+                  },
                 ],
                 "@babel/preset-react",
                 "@babel/preset-typescript",
