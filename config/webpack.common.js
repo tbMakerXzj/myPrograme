@@ -27,17 +27,17 @@ module.exports = {
             loader: "babel-loader",
             options: {
               cacheDirectory: true,
-              presets: [
-                [
-                  "@babel/preset-env",
-                  {
-                    useBuiltIns: "usage",
-                    corejs: 3,
-                  },
-                ],
-                "@babel/preset-react",
-                "@babel/preset-typescript",
-              ],
+              // presets: [
+              //     [
+              //         '@babel/preset-env',
+              //         {
+              //             "useBuiltIns": "usage",
+              //             "corejs": 3,
+              //         }
+              //     ],
+              //     '@babel/preset-react',
+              //     '@babel/preset-typescript'
+              // ]
             },
           },
         ],
@@ -124,12 +124,33 @@ module.exports = {
       },
       {
         test: /\.scss|sass$/,
+        exclude: /\.module\.scss|sass$/,
         use: [
           getStyleLoader,
           {
             loader: "css-loader",
             options: {
               importLoaders: 2,
+            },
+          },
+          "postcss-loader",
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.module\.scss|sass$/,
+        use: [
+          getStyleLoader,
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 2,
+              options: {
+                importLoaders: 2,
+                modules: {
+                  localIdentName: "[name]__[local]__[hash:base64:8]",
+                },
+              },
             },
           },
           "postcss-loader",
