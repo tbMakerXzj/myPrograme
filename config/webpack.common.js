@@ -27,17 +27,17 @@ module.exports = {
                         loader: 'babel-loader',
                         options: {
                             cacheDirectory: true,
-                            presets: [
-                                [
-                                    '@babel/preset-env',
-                                    {
-                                        "useBuiltIns": "usage",
-                                        "corejs": 3,
-                                    }
-                                ],
-                                '@babel/preset-react',
-                                '@babel/preset-typescript'
-                            ]
+                            // presets: [
+                            //     [
+                            //         '@babel/preset-env',
+                            //         {
+                            //             "useBuiltIns": "usage",
+                            //             "corejs": 3,
+                            //         }
+                            //     ],
+                            //     '@babel/preset-react',
+                            //     '@babel/preset-typescript'
+                            // ]
                         }
                     }
                 ]
@@ -190,7 +190,10 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../public/index.html'),
-            inject: true
+            inject: true,
+            templateParameters: {
+                buildTime: new Date().toLocaleString()
+            }
         }),
         new webpack.DefinePlugin({
             "process.env.BASE_ENV": JSON.stringify(process.env.BASE_ENV),

@@ -29,19 +29,19 @@ module.exports = merge(baseConfig, {
             filename: 'css/[name]·[contenthash:8].css'
         }),
         // 清除没用的css
-        new PurgeCSSPlugin({
-            paths: globAll.sync([
-                `${path.join(__dirname, '../src')}/**/*.tsx`,
-                path.join(__dirname, '../public/index.html')
-            ])
-        }),
+        // new PurgeCSSPlugin({
+        //     paths: globAll.sync([
+        //         `${path.join(__dirname, '../src')}/**/*.tsx`,
+        //         path.join(__dirname, '../public/index.html')
+        //     ])
+        // }),
         new CompressionPlugin({
             test: /.(js|css)$/, // 只生成css,js压缩文件
             filename: '[path][base].gz', // 文件命名
             algorithm: 'gzip', // 压缩格式,默认是gzip
             threshold: 10240, // 只有大小大于该值的资源会被处理。默认值是 10k
             minRatio: 0.8 // 压缩率,默认值是 0.8
-        })
+        }),
     ],
     optimization: {
         minimizer: [
