@@ -1,5 +1,5 @@
 import React from "react";
-import ModuleWrapper from "../../component/moduleWrapper";
+import ModuleWrapper from "@/pages/component/moduleWrapper";
 
 const arr = [
   { a: 1, b: 2 },

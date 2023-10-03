@@ -1,8 +1,8 @@
 .headerWrapper {
   height: 60px;
-  box-shadow: 0px 2px 6px 0px rgba(0, 21, 41, 0.12);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.16);
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   font-size: 32px;
   color: #fff;
@@ -12,4 +12,85 @@
   top: 0;
   left: 0;
   width: 100%;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.center{
+  margin: 0 auto;
+}
+
+.space-invader {
+  /* Modify size here: */
+  --block-size: 5px;
+
+  box-shadow: 0 0 0 var(--block-size) #333,
+  0 var(--block-size) 0 var(--block-size) #333,
+  calc(var(--block-size) * -2.5) calc(var(--block-size) * 1.5) 0 calc(var(--block-size) * .5) #333,
+  calc(var(--block-size) * 2.5) calc(var(--block-size) * 1.5) 0 calc(var(--block-size) * .5) #333,
+  calc(var(--block-size) * -3) calc(var(--block-size) * -3) 0 0 #333,
+  calc(var(--block-size) * 3) calc(var(--block-size) * -3) 0 0 #333,
+  calc(var(--block-size) * -2) calc(var(--block-size) * -2) 0 0 #333,
+  calc(var(--block-size) * 2) calc(var(--block-size) * -2) 0 0 #333,
+  calc(var(--block-size) * -3) calc(var(--block-size) * -1) 0 0 #333,
+  calc(var(--block-size) * -2) calc(var(--block-size) * -1) 0 0 #333,
+  calc(var(--block-size) * 2) calc(var(--block-size) * -1) 0 0 #333,
+  calc(var(--block-size) * 3) calc(var(--block-size) * -1) 0 0 #333,
+  calc(var(--block-size) * -4) 0 0 0 #333,
+  calc(var(--block-size) * -3) 0 0 0 #333,
+  calc(var(--block-size) * 3) 0 0 0 #333,
+  calc(var(--block-size) * 4) 0 0 0 #333,
+  calc(var(--block-size) * -5) var(--block-size) 0 0 #333,
+  calc(var(--block-size) * -4) var(--block-size) 0 0 #333,
+  calc(var(--block-size) * 4) var(--block-size) 0 0 #333,
+  calc(var(--block-size) * 5) var(--block-size) 0 0 #333,
+  calc(var(--block-size) * -5) calc(var(--block-size) * 2) 0 0 #333,
+  calc(var(--block-size) * 5) calc(var(--block-size) * 2) 0 0 #333,
+  calc(var(--block-size) * -5) calc(var(--block-size) * 3) 0 0 #333,
+  calc(var(--block-size) * -3) calc(var(--block-size) * 3) 0 0 #333,
+  calc(var(--block-size) * 3) calc(var(--block-size) * 3) 0 0 #333,
+  calc(var(--block-size) * 5) calc(var(--block-size) * 3) 0 0 #333,
+  calc(var(--block-size) * -2) calc(var(--block-size) * 4) 0 0 #333,
+  calc(var(--block-size) * -1) calc(var(--block-size) * 4) 0 0 #333,
+  var(--block-size) calc(var(--block-size) * 4) 0 0 #333,
+  calc(var(--block-size) * 2) calc(var(--block-size) * 4) 0 0 #333;
+  background: #333;
+  width: var(--block-size);
+  height: var(--block-size);
+  overflow: hidden;
+}
+.yin-yang {
+  width: 50px;
+  box-sizing: content-box;
+  height: 25px;
+  background: #fff;
+  border-color: #333;
+  border-style: solid;
+  border-width: 2px 2px 26px 2px;
+  border-radius: 100%;
+  position: relative;
+}
+.yin-yang:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #fff;
+  border: 9.4px solid #333;
+  border-radius: 100%;
+  width: 6.25px;
+  height: 6.25px;
+  box-sizing: content-box;
+}
+.yin-yang:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #333;
+  border: 9.4px solid #fff;
+  border-radius: 100%;
+  width: 6.25px;
+  height: 6.25px;
+  box-sizing: content-box;
 }
