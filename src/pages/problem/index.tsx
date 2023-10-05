@@ -3,8 +3,6 @@ import style from "./index.module.css";
 import ModuleWrapper from "../component/moduleWrapper";
 
 const Problem: React.FC = () => {
-  console.log("asdads");
-
   return (
     <>
       <ModuleWrapper>

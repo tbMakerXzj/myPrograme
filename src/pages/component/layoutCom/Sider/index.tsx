@@ -19,14 +19,12 @@ const SiderBar: React.FC = () => {
   const local = useLocation();
 
   const handleClick = (e: MenuInfo) => {
-    const key: string | undefined = Object.keys(pathConfig).find(
-      (i: string) => i === e.key
-    );
+    const key: string | undefined = Object.keys(pathConfig).find((i: string) => i === e.key);
     if (key && pathConfig[key]) {
       setSelectedKeys([key]);
       navigate(`/${key}`);
     } else {
-      navigate(`/`);
+      navigate("/");
     }
   };
 
@@ -57,9 +55,7 @@ const SiderBar: React.FC = () => {
   };
 
   const onOpenChange = (keys: any) => {
-    const latestOpenKey = keys.find(
-      (key: string) => openKeys.indexOf(key) === -1
-    );
+    const latestOpenKey = keys.find((key: string) => openKeys.indexOf(key) === -1);
     setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
   };
 

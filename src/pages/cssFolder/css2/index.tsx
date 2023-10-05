@@ -5,9 +5,6 @@ import bigImg from "@/pages/assets/1.png";
 import smallImg from "@/pages/assets/2.jpg";
 
 const Css2Component = () => {
-  const a = new Boolean(true);
-  const b: boolean = true;
-  console.log(a === b);
   return (
     <>
       <ModuleWrapper width={450}>
