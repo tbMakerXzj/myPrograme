@@ -17,7 +17,6 @@ const SiderBar: React.FC = () => {
 
   const navigate = useNavigate();
   const local = useLocation();
-  console.log(1111);
 
   const handleClick = (e: MenuInfo) => {
     const key: string | undefined = Object.keys(pathConfig).find((i: string) => i === e.key);
