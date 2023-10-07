@@ -19,6 +19,7 @@
     }
   },
   "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier"],
+  "files": ["src/**/*"],
   "rules": {
     "linebreak-style": ["off", "unix"],
     "quotes": ["error", "double"],
@@ -26,7 +27,8 @@
     "no-console": "error",
     "@typescript-eslint/no-explicit-any": "off", // any 使用报错
     "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/ban-ts-comment": "off"
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-var-requires": "off"
     // "prettier/prettier": [
     //   "error",
     //   {
