@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import * as Icon from "@ant-design/icons";
 import { MenuInfo } from "rc-menu/lib/interface";
 import { menuConfig, pathConfig } from "./menu.config";
-import { IMenuConfig } from "../../../types/common";
+import { IMenuConfig } from "@/types/common";
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;

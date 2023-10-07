@@ -1,4 +1,4 @@
-import { ICommonObj, IMenuConfig } from "../../../types/common";
+import { ICommonObj, IMenuConfig } from "@/types/common";
 
 // 路由配置
 export const pathConfig: ICommonObj = {

@@ -3,12 +3,12 @@ import { Layout, Spin } from "antd";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import "./index.css";
-import Header from "../component/layoutCom/Header";
-import Sider from "../component/layoutCom/Sider";
+import Header from "@/component/layoutComponent/Header";
+import Sider from "@/component/layoutComponent/Sider";
 // import Sider from '@/pages/component/layoutCom/Sider'
 import { Suspense } from "react";
 import { routerConfig } from "./router.config";
-import { RouterConfig } from "../types/common";
+import { RouterConfig } from "@/types/common";
 
 function Router() {
   const getRouter = (config: RouterConfig[]) => {

@@ -1,10 +1,10 @@
-import { RouterConfig } from "@/pages/types/common";
+import { RouterConfig } from "@/types/common";
 import { lazy } from "react";
 
 export const routerConfig: RouterConfig[] = [
   {
     path: "/dashboard",
-    component: lazy(() => import("../dashboard")),
+    component: lazy(() => import("@/pages/dashboard")),
   },
   // css
   {
@@ -13,7 +13,7 @@ export const routerConfig: RouterConfig[] = [
     children: [
       {
         path: "",
-        component: lazy(() => import("../cssFolder/test1")),
+        component: lazy(() => import("@/pages/cssFolder/test1")),
       },
     ],
   },
@@ -23,7 +23,7 @@ export const routerConfig: RouterConfig[] = [
     children: [
       {
         path: "",
-        component: lazy(() => import("../cssFolder/css2")),
+        component: lazy(() => import("@/pages/cssFolder/css2")),
       },
     ],
   },
@@ -34,7 +34,7 @@ export const routerConfig: RouterConfig[] = [
     children: [
       {
         path: "",
-        component: lazy(() => import("../tsFolder/ts1")),
+        component: lazy(() => import("@/pages/tsFolder/ts1")),
       },
     ],
   },
@@ -45,7 +45,7 @@ export const routerConfig: RouterConfig[] = [
     children: [
       {
         path: "",
-        component: lazy(() => import("../jsFolder/js1")),
+        component: lazy(() => import("@/pages/jsFolder/js1")),
       },
     ],
   },
@@ -56,7 +56,7 @@ export const routerConfig: RouterConfig[] = [
     children: [
       {
         path: "",
-        component: lazy(() => import("../problem")),
+        component: lazy(() => import("@/pages/problem")),
       },
     ],
   },

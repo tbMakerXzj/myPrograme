@@ -1,6 +1,6 @@
 // import ModuleWrapper from '../../../pages/component/moduleWrapper';
 import React from "react";
-import ModuleWrapper from "@/pages/component/moduleWrapper";
+import ModuleWrapper from "@/component/moduleWrapper";
 
 import styles from "./index.module.less";
 // 联合类型

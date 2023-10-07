@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./index.module.css";
-import ModuleWrapper from "../component/moduleWrapper";
+import ModuleWrapper from "../../component/moduleWrapper";
 
 const Problem: React.FC = () => {
   return (

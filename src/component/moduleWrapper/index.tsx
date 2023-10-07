@@ -1,5 +1,5 @@
 import React from "react";
-import { ModuleWrapperProps } from "@/pages/types/common";
+import { ModuleWrapperProps } from "@/types/common";
 
 import style from "./index.module.css";
 

@@ -1,8 +1,8 @@
 import React from "react";
 import style from "./index.module.css";
-import ModuleWrapper from "@/pages/component/moduleWrapper";
-import bigImg from "@/pages/assets/1.png";
-import smallImg from "@/pages/assets/2.jpg";
+import ModuleWrapper from "@/component/moduleWrapper";
+import bigImg from "@/assets/1.png";
+import smallImg from "@/assets/2.jpg";
 
 const Css2Component = () => {
   return (
