@@ -19,7 +19,7 @@
     }
   },
   "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier"],
-  "files": ["src/**/*"],
+  "files": ["./src/**/*"],
   "rules": {
     "linebreak-style": ["off", "unix"],
     "quotes": ["error", "double"],
