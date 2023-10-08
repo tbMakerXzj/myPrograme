@@ -1,2 +1,2 @@
 import UrlTools from "./urlTools";
-export default { UrlTools };
+export { UrlTools };
