@@ -67,4 +67,6 @@ for (var i = 0; i < names.length; i++) {
 //   hb.put(students[i]);
 // }
 
+//  开链法 线性探测法
+
 hb.showDistro();
