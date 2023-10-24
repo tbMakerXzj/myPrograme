@@ -20,7 +20,7 @@
     }
   },
   "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier"],
-  "ignorePatterns": ["**/config/**"],
+  // "ignorePatterns": ["**/config/**"],
   "rules": {
     "linebreak-style": ["off", "unix"],
     "quotes": ["error", "double"],
