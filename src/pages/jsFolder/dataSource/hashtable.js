@@ -1,11 +1,14 @@
 /* eslint-disable  */
 function HashTable() {
   this.table = new Array(137);
+  this.value = [];
   this.buildChains = buildChains;
   this.simpleHash = simpleHash;
   this.showDistro = showDistro;
   this.put = put;
+  this.put1 = put1;
   this.get = get;
+  this.get1 = get1;
 }
 
 function buildChains() {
@@ -28,8 +31,33 @@ function put(data) {
   this.table[pos] = data;
 }
 
+function put1(data) {
+  var pos = this.simpleHash(data);
+  if (this.table[pos] === undefined) {
+    this.table[pos] = data;
+    this.value[pos] = data;
+  } else {
+    while (this.table[pos] !== undefined) {
+      pos++;
+    }
+    this.table[pos] = data;
+    this.value[pos] = data;
+  }
+}
+
 function get(key) {
   return this.table[this.simpleHash(key)];
+}
+
+function get1(key) {
+  var hash = -1;
+  hash = this.simpleHash(key);
+  if (hash > -1) {
+    for (var i = hash; this.table[hash] !== undefined; i++) {
+      return this.value[hash];
+    }
+  }
+  return undefined;
 }
 
 function showDistro() {
