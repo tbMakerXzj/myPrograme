@@ -52,5 +52,4 @@ s.peek();
 s.clear();
 // s.length();
 // print(s);
-// eslint-disable-next-line no-console
 console.log(isPlaid("hello"), isPlaid("level"));

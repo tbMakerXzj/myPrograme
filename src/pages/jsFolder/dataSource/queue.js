@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 function Queue() {
   this.dataSource = [];
   this.enqueue = enqueue;

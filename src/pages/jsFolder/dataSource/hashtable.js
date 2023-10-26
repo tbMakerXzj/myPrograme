@@ -1,4 +1,3 @@
-/* eslint-disable  */
 function HashTable() {
   this.table = new Array(137);
   this.buildChains = buildChains;

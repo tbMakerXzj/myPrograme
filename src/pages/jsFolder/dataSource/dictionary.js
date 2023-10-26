@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 function Dictionary() {
   this.data = [];
   this.add = add;
@@ -29,7 +28,6 @@ function showAll() {
 
 function count() {
   var count = 0;
-  // eslint-disable-next-line no-empty-pattern
   for (var {} in this.data) {
     count++;
   }
