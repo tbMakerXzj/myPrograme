@@ -8,6 +8,7 @@ export const pathConfig: ICommonObj = {
   ts1: "/ts1",
   js1: "/js1",
   problem: "/problem",
+  demo1: "/demo1",
 };
 
 // 菜单配置
@@ -65,6 +66,19 @@ export const menuConfig: IMenuConfig[] = [
         icon: null,
         children: [],
         name: "js1",
+      },
+    ],
+  },
+  {
+    key: "component",
+    icon: "BuildOutlined",
+    name: "component",
+    children: [
+      {
+        key: "demo1",
+        icon: null,
+        children: [],
+        name: "demo1",
       },
     ],
   },
