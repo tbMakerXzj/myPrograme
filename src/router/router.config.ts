@@ -60,4 +60,15 @@ export const routerConfig: RouterConfig[] = [
       },
     ],
   },
+  // demo
+  {
+    path: "/demo1",
+    exatc: false,
+    children: [
+      {
+        path: "",
+        component: lazy(() => import("@/pages/componentDemo/demo1")),
+      },
+    ],
+  },
 ];
