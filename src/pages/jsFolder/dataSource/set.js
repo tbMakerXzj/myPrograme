@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 function Set() {
   this.dataStore = [];
   this.add = add;
@@ -8,6 +7,7 @@ function Set() {
   this.contain = contain;
   this.union = union;
   this.intersect = intersect;
+  this.difference = difference;
 }
 
 function add(data) {
@@ -68,6 +68,17 @@ function intersect(set) {
   return tempSet;
 }
 
+// 补集
+function difference(set) {
+  var tempSet = new Set();
+  for (var i = 0; i < this.dataStore.length; i++) {
+    if (!set.contain(this.dataStore[i])) {
+      tempSet.add(this.dataStore[i]);
+    }
+  }
+  return tempSet;
+}
+
 var names = new Set();
 names.add("John");
 names.add("Bob");
@@ -96,3 +107,5 @@ var unionSet = names.union(names2);
 console.log("union", unionSet.show(), unionSet.dataStore.length);
 var intersectSet = names.intersect(names2);
 console.log("intersect", intersectSet.show(), intersectSet.dataStore.length);
+var differenceSet = names.difference(names2);
+console.log("difference", differenceSet.show(), differenceSet.dataStore.length);
