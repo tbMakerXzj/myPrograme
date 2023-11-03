@@ -8,6 +8,7 @@ function Set() {
   this.union = union;
   this.intersect = intersect;
   this.subset = subset;
+  this.difference = difference;
 }
 
 function add(data) {
@@ -81,6 +82,16 @@ function subset(set) {
 
   return true;
 }
+// 补集
+function difference(set) {
+  var tempSet = new Set();
+  for (var i = 0; i < this.dataStore.length; i++) {
+    if (!set.contain(this.dataStore[i])) {
+      tempSet.add(this.dataStore[i]);
+    }
+  }
+  return tempSet;
+}
 
 var names = new Set();
 names.add("John");
@@ -117,3 +128,5 @@ names3.add("Mary");
 var subset = names.subset(names2);
 var subset2 = names.subset(names3);
 console.log("subset", subset, subset2);
+var differenceSet = names.difference(names2);
+console.log("difference", differenceSet.show(), differenceSet.dataStore.length);
