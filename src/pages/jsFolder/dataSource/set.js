@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 function Set() {
   this.dataStore = [];
   this.add = add;
@@ -8,6 +7,7 @@ function Set() {
   this.contain = contain;
   this.union = union;
   this.intersect = intersect;
+  this.subset = subset;
 }
 
 function add(data) {
@@ -68,6 +68,20 @@ function intersect(set) {
   return tempSet;
 }
 
+// 子集
+function subset(set) {
+  if (this.size() < set.size()) {
+    return false;
+  }
+  for (var i = 0; i < set.dataStore.length; i++) {
+    if (!this.contain(set.dataStore[i])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 var names = new Set();
 names.add("John");
 names.add("Bob");
@@ -96,3 +110,10 @@ var unionSet = names.union(names2);
 console.log("union", unionSet.show(), unionSet.dataStore.length);
 var intersectSet = names.intersect(names2);
 console.log("intersect", intersectSet.show(), intersectSet.dataStore.length);
+var names3 = new Set();
+names3.add("John");
+names3.add("Bob");
+names3.add("Mary");
+var subset = names.subset(names2);
+var subset2 = names.subset(names3);
+console.log("subset", subset, subset2);
