@@ -42,10 +42,8 @@ function contain(data) {
   return this.dataStore.indexOf(data) > -1 ? true : false;
 }
 
-// 并集
 function union(set2) {
   var tempSet = new Set();
-  // var tempArr = this.dataStore.concat(set2.dataStore);
   for (var i = 0; i < this.dataStore.length; i++) {
     tempSet.add(this.dataStore[i]);
   }
@@ -58,7 +56,6 @@ function union(set2) {
   return tempSet;
 }
 
-// 交集
 function intersect(set) {
   var tempSet = new Set();
   for (var i = 0; i < this.dataStore.length; i++) {
@@ -69,7 +66,6 @@ function intersect(set) {
   return tempSet;
 }
 
-// 子集
 function subset(set) {
   if (this.size() < set.size()) {
     return false;
@@ -82,7 +78,7 @@ function subset(set) {
 
   return true;
 }
-// 补集
+
 function difference(set) {
   var tempSet = new Set();
   for (var i = 0; i < this.dataStore.length; i++) {
