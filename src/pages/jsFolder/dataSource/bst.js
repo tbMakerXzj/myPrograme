@@ -7,6 +7,7 @@ function BST() {
   this.getMin = getMin;
   this.getMax = getMax;
   this.find = find;
+  this.remove = remove;
 }
 
 function Node(left, right, data) {
@@ -71,16 +72,16 @@ function postOrder(node) {
   }
 }
 
-function getMin() {
-  var current = this.root;
+function getMin(node) {
+  var current = node;
   while (current.left !== null) {
     current = current.left;
   }
   return current.data;
 }
 
-function getMax() {
-  var current = this.root;
+function getMax(node) {
+  var current = node;
   while (current.right !== null) {
     current = current.right;
   }
@@ -101,6 +102,49 @@ function find(data) {
   return null;
 }
 
+function remove(data) {
+  root = removeNode(this.root, data);
+}
+
+// 删除节点函数，参数node为要删除的节点，data为要删除的节点的数据
+function removeNode(node, data) {
+  // 如果节点为空，则返回空
+  if (node === null) {
+    return null;
+  }
+  // 如果要删除的节点数据等于当前节点数据，则判断当前节点左右子节点是否为空
+  if (data === node.data) {
+    // 如果左右子节点都为空，则返回空
+    if (node.left === null && node.right === null) {
+      return null;
+    }
+    // 如果左子节点为空，则返回右子节点
+    if (node.left === null) {
+      return node.right;
+    }
+    // 如果右子节点为空，则返回左子节点
+    if (node.right === null) {
+      return node.left;
+    }
+    // 获取右子节点最小值节点
+    var tempNode = getMin(node.right);
+    // 将当前节点数据设置为最小值节点的数据
+    node.data = tempNode.data;
+    // 递归调用删除右子节点最小值节点
+    node.right = removeNode(node.right, tempNode.data);
+    // 返回当前节点
+    return node;
+    // 如果要删除的节点数据小于当前节点数据，则递归调用删除左子节点
+  } else if (data < node.data) {
+    node.left = removeNode(node.left, data);
+    return node;
+    // 如果要删除的节点数据大于当前节点数据，则递归调用删除右子节点
+  } else {
+    node.right = removeNode(node.right, data);
+    return node;
+  }
+}
+
 var bst = new BST();
 bst.insert(20);
 bst.insert(15);
@@ -117,4 +161,4 @@ bst.insert(19);
 // bst.inOrder(bst.root);
 // bst.preOrder(bst.root);
 // bst.postOrder(bst.root);
-console.log(bst.getMin(), bst.getMax(), bst.find(113));
+console.log(bst.getMin(bst.root), bst.getMax(bst.root), bst.find(113));
