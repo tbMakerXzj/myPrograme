@@ -8,9 +8,11 @@ function BST() {
   this.getMax = getMax;
   this.find = find;
   this.remove = remove;
+  this.update = update;
 }
 
 function Node(left, right, data) {
+  this.count = 1;
   this.left = left;
   this.right = right;
   this.data = data;
@@ -145,6 +147,31 @@ function removeNode(node, data) {
   }
 }
 
+function update(data) {
+  var grade = this.find(data);
+  grade.count++;
+  return grade;
+}
+
+function prArray(arr) {
+  console.log(11111, arr);
+  console.log(arr[0].toString() + " ");
+  for (var i = 1; i < arr.length; i++) {
+    console.log(arr[i].toString() + " ");
+    if (i % 10 === 9) {
+      console.log("\n");
+    }
+  }
+}
+
+function genArray(length) {
+  var arr = [];
+  for (var i = 0; i < length; i++) {
+    arr[i] = Math.floor(Math.random() * 101);
+  }
+  return arr;
+}
+
 var bst = new BST();
 bst.insert(20);
 bst.insert(15);
@@ -161,4 +188,19 @@ bst.insert(19);
 // bst.inOrder(bst.root);
 // bst.preOrder(bst.root);
 // bst.postOrder(bst.root);
-console.log(bst.getMin(bst.root), bst.getMax(bst.root), bst.find(113));
+// console.log(bst.getMin(bst.root), bst.getMax(bst.root), bst.find(113));
+
+var grades = genArray(100);
+// prArray(grades);
+console.log(grades);
+var gradedistro = new BST();
+for (var i = 0; i < grades.length; i++) {
+  var g = grades[i];
+  var grade = gradedistro.find(g);
+  if (grade === null) {
+    gradedistro.insert(g);
+  } else {
+    gradedistro.update(g);
+  }
+}
+console.log(gradedistro.root);
