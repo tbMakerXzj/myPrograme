@@ -23,8 +23,11 @@ CArray.prototype.selectionSort = function () {
   }
 };
 
-var num = 10;
+var num = 10000;
 var ca = new CArray(num);
 ca.setData();
+var startTime = new Date().getTime();
 ca.selectionSort();
-console.log(ca.toString());
+var endTime = new Date().getTime();
+// console.log(ca.toString());
+console.log("selectionSort:" + (endTime - startTime) + "ms");

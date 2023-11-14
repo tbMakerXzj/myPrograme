@@ -10,8 +10,11 @@ CArray.prototype.bubbleSort = function () {
   }
 };
 
-var num = 10;
+var num = 10000;
 var myNumArr = new CArray(num);
 myNumArr.setData();
+var startTime = new Date().getTime();
 myNumArr.bubbleSort();
-console.log(myNumArr.toString());
+var endTime = new Date().getTime();
+// console.log(myNumArr.toString());
+console.log("bubbleSort: " + (endTime - startTime) + "ms");
