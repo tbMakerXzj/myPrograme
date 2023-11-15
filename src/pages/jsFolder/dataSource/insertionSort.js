@@ -12,10 +12,10 @@ CArray.prototype.insertionSort = function () {
     var key = this.dataStore[i];
     var j = i;
     while (j > 0 && this.dataStore[j - 1] >= key) {
-      this.dataStore[j] = this.dataStore[j - 1];
+      this.swap(this.dataStore, j, j - 1);
       j--;
     }
-    this.dataStore[j] = key;
+    // this.dataStore[j] = key;
   }
 };
 
@@ -25,4 +25,5 @@ ca.setData();
 var startTime = new Date().getTime();
 ca.insertionSort();
 var endTime = new Date().getTime();
+// console.log(ca.toString());
 console.log("insertionSort:" + (endTime - startTime) + "ms");
