@@ -43,4 +43,9 @@ var arr = [1, 2, 2, 3, 4, 5];
 // console.log(arr.copyWithin(3, 1, 2));
 // console.log(arr.entries().next());
 // arr.filter((value, index, arr) => {}, arr);
-console.log(arr.keys());
+// console.log(arr.keys());
+const reduce = arr.reduce((pre, cur, currentIndex, array) => {
+  console.log(pre, cur);
+  return pre + cur;
+});
+console.log(reduce);
