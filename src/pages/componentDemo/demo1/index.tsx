@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useEffect } from "react";
+import React, { useEffect, useImperativeHandle, useRef } from "react";
 import SearchInput from "@/component/searchComponent";
 import ModuleWrapper from "@/component/moduleWrapper";
 import { Button, Card, Form, Input, Space } from "antd";
@@ -80,8 +80,37 @@ const Demo1: React.FC = () => {
           </Form.List>
         </Form>
       </ModuleWrapper>
+      <ModuleWrapper>
+        <Father />
+      </ModuleWrapper>
     </>
   );
 };
+
+const Father = () => {
+  const ref = useRef<any>();
+  return (
+    <>
+      <Button
+        onClick={() => {
+          console.log(ref.current.aaa());
+        }}
+      >
+        111
+      </Button>
+      <Child ref={ref} />
+    </>
+  );
+};
+
+// eslint-disable-next-line react/display-name
+const Child = React.forwardRef((props, ref) => {
+  useImperativeHandle(ref, () => ({
+    aaa: () => {
+      return "11asd1";
+    },
+  }));
+  return <div>123</div>;
+});
 
 export default Demo1;
