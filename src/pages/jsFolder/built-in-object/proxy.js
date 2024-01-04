@@ -2,6 +2,8 @@
 /**
  * target 参数表示所要拦截的目标对象，handler 参数也是一个对象，用于定制拦截行为。
  * Proxy(target,handler)
+ * handler.get
+ * handler.set
  *
  *
  */
