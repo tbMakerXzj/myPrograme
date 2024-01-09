@@ -12,7 +12,9 @@
  * handler.preventExtensions
  * handler.getPrototypeOf
  * handler.isExtensions
- * handler.setPrototypeOf
+ * handler.setPrototypepOf
+ * handler.apply
+ * handler.construct
  *
  *
  */
@@ -32,7 +34,8 @@ const desc = {
 
 const proxy = new Proxy(target, {
   get: function (target, property, receiver) {
-    return target[property];
+    console.log(111, target, property);
+    return Reflect.get(target, property);
   },
   set: function (target, property, value, receiver) {
     target[property] = value;
@@ -68,12 +71,50 @@ const proxy = new Proxy(target, {
   isExtensible: function (target) {
     return Object.isExtensible(target);
   },
+  setPrototypeOf: function (target, proto) {
+    return Object.setPrototypeOf(target, proto);
+  },
+  apply: function (target, thisArg, argumentsList) {
+    return target.apply(thisArg, argumentsList);
+  },
 });
 // delete proxy._prop;
 // console.log("_prop" in proxy);
+console.log(proxy.baz);
 // console.log(Object.getOwnPropertyDescriptor(proxy, "baz"));
 // console.log(Object.getOwnPropertyDescriptor(proxy, "_prop"));
 // Object.defineProperty(proxy, "_prop", desc);
-console.log(Object.preventExtensions(proxy));
+// console.log(Object.preventExtensions(proxy));
 // console.log(proxy);
-console.log(Object.isExtensible(proxy));
+// console.log(Object.isExtensible(proxy));
+// console.log(Object.getPrototypeOf(proxy));
+// console.log(Object.setPrototypeOf(proxy, {}));
+// const twice = {
+//   apply(target, context, args) {
+//     return Reflect.apply(...args) * 2;
+//   },
+// };
+
+// const sum = function (left, right) {
+//   return left + right;
+// };
+
+// const proxy1 = new Proxy(sum, twice);
+
+// console.log(proxy1(1, 2));
+// // 6
+
+// console.log(proxy1.call(null, 5, 6));
+// // 22
+
+// console.log(proxy1.apply(null, [7, 8]));
+// // 30
+// const proxy2 = new Proxy(
+//   {},
+//   {
+//     construct: function (target, argumentsList, newTarget) {
+//       console.log(target, argumentsList, newTarget);
+//     },
+//   }
+// );
+// console.log(new proxy2(1).value);
