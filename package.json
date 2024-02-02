@@ -52,18 +52,7 @@
       "eslint --fix"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist":["defaults"],
   "devDependencies": {
     "@babel/core": "^7.22.15",
     "@babel/preset-env": "^7.22.15",
@@ -93,6 +82,8 @@
     "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.29",
     "postcss-loader": "^7.3.3",
+    "postcss-nested": "^6.0.1",
+    "postcss-preset-env": "^9.3.0",
     "prettier": "^3.0.3",
     "purgecss-webpack-plugin": "^5.0.0",
     "react-refresh": "^0.14.0",

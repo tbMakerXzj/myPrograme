@@ -15,6 +15,7 @@
  * handler.setPrototypepOf
  * handler.apply
  * handler.construct
+ * revocable
  *
  *
  */
@@ -80,7 +81,7 @@ const proxy = new Proxy(target, {
 });
 // delete proxy._prop;
 // console.log("_prop" in proxy);
-console.log(proxy.baz);
+// console.log(proxy.baz);
 // console.log(Object.getOwnPropertyDescriptor(proxy, "baz"));
 // console.log(Object.getOwnPropertyDescriptor(proxy, "_prop"));
 // Object.defineProperty(proxy, "_prop", desc);
@@ -91,7 +92,7 @@ console.log(proxy.baz);
 // console.log(Object.setPrototypeOf(proxy, {}));
 // const twice = {
 //   apply(target, context, args) {
-//     return Reflect.apply(...args) * 2;
+//     return Reflect.apply(...arguments) * 2;
 //   },
 // };
 
@@ -102,10 +103,8 @@ console.log(proxy.baz);
 // const proxy1 = new Proxy(sum, twice);
 
 // console.log(proxy1(1, 2));
-// // 6
 
 // console.log(proxy1.call(null, 5, 6));
-// // 22
 
 // console.log(proxy1.apply(null, [7, 8]));
 // // 30

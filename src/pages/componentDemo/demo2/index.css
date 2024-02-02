@@ -1,0 +1,31 @@
+.text {
+  font-size: 100px;
+  font-weight: bold;
+  position: relative;
+  color: #ccc;
+}
+
+.text-bottom {
+  position: absolute;
+  color: red;
+  z-index: -1;
+  animation: myanim 2s infinite;
+}
+
+@keyframes myanim {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  70% {
+    transform: scale(1.25);
+    /* font-size: 32px; */
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

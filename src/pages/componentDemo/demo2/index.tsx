@@ -2,9 +2,11 @@
 import ModuleWrapper from "@/component/moduleWrapper";
 import { Button, Form, Input } from "antd";
 import React from "react";
+import "./index.css";
 
 const Demo2: React.FC = () => {
   const [form] = Form.useForm();
+
   return (
     <ModuleWrapper>
       <Form
@@ -50,6 +52,20 @@ const Demo2: React.FC = () => {
         </Form.Item>
         <Button htmlType="submit">提交</Button>
       </Form>
+      <div>
+        <span className="text">
+          <span className="text-bottom">X</span>
+          <span className="text-top">X</span>
+        </span>
+        <span className="text">
+          <span className="text-bottom">Y</span>
+          <span className="text-top">Y</span>
+        </span>
+        <span className="text">
+          <span className="text-bottom">Z</span>
+          <span className="text-top">Z</span>
+        </span>
+      </div>
     </ModuleWrapper>
   );
 };

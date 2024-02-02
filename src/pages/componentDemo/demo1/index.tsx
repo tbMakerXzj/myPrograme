@@ -7,13 +7,23 @@ import { CloseOutlined, PlusOutlined } from "@ant-design/icons";
 
 const Demo1: React.FC = () => {
   const [form] = Form.useForm();
+  const [val, setVal] = React.useState<any>();
+  const preValue = usePrevious(val);
   useEffect(() => {
     form.setFieldsValue({ asd: [{ list1: "1", list: ["1"] }] });
   }, []);
+  console.log("preValue", preValue);
+
   return (
     <>
       <ModuleWrapper>
-        <SearchInput onChange={(val: any) => console.log(val)} value="123" />
+        <SearchInput
+          onChange={(val: any) => {
+            // console.log(val);
+            setVal(val);
+          }}
+          // value="123"
+        />
       </ModuleWrapper>
       <ModuleWrapper>
         <Form form={form}>
@@ -85,6 +95,14 @@ const Demo1: React.FC = () => {
       </ModuleWrapper>
     </>
   );
+};
+
+const usePrevious = (value: any) => {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
 };
 
 const Father = () => {
