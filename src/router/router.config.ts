@@ -27,6 +27,16 @@ export const routerConfig: RouterConfig[] = [
       },
     ],
   },
+  {
+    path: "/css3",
+    exatc: false,
+    children: [
+      {
+        path: "",
+        component: lazy(() => import("@/pages/cssFolder/css3")),
+      },
+    ],
+  },
   // ts
   {
     path: "/ts1",
