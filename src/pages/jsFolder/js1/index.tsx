@@ -51,11 +51,13 @@ const JS1: React.FC = () => {
     return true;
   };
   return (
-    <ModuleWrapper>
-      <h2>数组对象去重</h2>
-      <p>去重前：{JSON.stringify(arr)}</p>
-      <p>去重后：{JSON.stringify(uniqueArray(arr))}</p>
-    </ModuleWrapper>
+    <>
+      <ModuleWrapper>
+        <h2>数组对象去重</h2>
+        <p>去重前：{JSON.stringify(arr)}</p>
+        <p>去重后：{JSON.stringify(uniqueArray(arr))}</p>
+      </ModuleWrapper>
+    </>
   );
 };
 
