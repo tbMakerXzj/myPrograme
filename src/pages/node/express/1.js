@@ -1,17 +1,52 @@
 /* eslint-disable no-console */
 const express = require("express");
 
+const fs = require("fs");
+
+const path = require("path");
+
 const app = express();
 
 const { singers } = require("./singers.json");
 
-app.get("/home", (req, res) => {
+// 静态资源中间件
+app.use(express.static(path.resolve(__dirname, "./public")));
+
+// 全局中间件
+function recordMiddleware(req, res, next) {
+  let { url, ip } = req;
+  const now = new Date();
+  const formattedTime = now.toLocaleString("zh-CN", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+  fs.appendFileSync(path.resolve(__dirname, "./access.log"), `[${formattedTime}] ${ip} ${url} \r\n`);
+  next();
+}
+
+// 路由中间件
+function checkCodeMiddleware(req, res, next) {
+  if (req.query.code === "123") {
+    next();
+  } else {
+    res.status(404);
+    res.send("404 Not Found");
+  }
+}
+
+app.use(recordMiddleware);
+
+app.get("/home", checkCodeMiddleware, (req, res) => {
   // 获取参数
-  console.log(req.method);
-  console.log(req.url);
-  console.log(req.query);
-  console.log(req.params);
-  console.log(req.ip);
+  // console.log(req.method);
+  // console.log(req.url);
+  // console.log(req.query);
+  // console.log(req.params);
+  // console.log(req.ip);
 
   res.send("Hello World1");
 });
@@ -21,8 +56,7 @@ app.get("/home", (req, res) => {
 //   res.send("params id send");
 // });
 
-app.get("/singer/:id", (req, res) => {
-  console.log(req.params?.id);
+app.get("/singer/:id", checkCodeMiddleware, (req, res) => {
   const id = req.params.id;
   let result = singers.find((singer) => {
     if (singer.id == Number(id)) {
@@ -56,14 +90,14 @@ app.get("/singer/:id", (req, res) => {
     `);
 });
 
-app.get("/response", (req, res) => {
+app.get("/response", checkCodeMiddleware, (req, res) => {
   res.status(500);
   res.set("aaaa", "bbbb");
   res.set("cccc", "11111");
   res.send("response send");
 });
 
-app.get("/other", (req, res) => {
+app.get("/other", checkCodeMiddleware, (req, res) => {
   // 跳转
   // res.redirect("https://www.baidu.com");
   // 下载
@@ -78,15 +112,15 @@ app.get("/other", (req, res) => {
   // res.send("111");
 });
 
-app.get("/", (req, res) => {
+app.get("/", checkCodeMiddleware, (req, res) => {
   res.send("home");
 });
 
-app.post("/login", (req, res) => {
+app.post("/login", checkCodeMiddleware, (req, res) => {
   res.send("login123");
 });
 
-app.all("/test", (req, res) => {
+app.all("/test", checkCodeMiddleware, (req, res) => {
   res.end("test");
 });
 
