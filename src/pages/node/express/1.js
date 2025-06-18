@@ -8,6 +8,8 @@ const path = require("path");
 const app = express();
 
 const { singers } = require("./singers.json");
+const homerRouter = require("./routers/homeRouter");
+const adminRouter = require("./routers/adminRouter");
 
 // 静态资源中间件
 app.use(express.static(path.resolve(__dirname, "./public")));
@@ -40,21 +42,8 @@ function checkCodeMiddleware(req, res, next) {
 
 app.use(recordMiddleware);
 
-app.get("/home", checkCodeMiddleware, (req, res) => {
-  // 获取参数
-  // console.log(req.method);
-  // console.log(req.url);
-  // console.log(req.query);
-  // console.log(req.params);
-  // console.log(req.ip);
-
-  res.send("Hello World1");
-});
-
-// app.get("/:id", (req, res) => {
-//   console.log(req.params?.id);
-//   res.send("params id send");
-// });
+app.use(homerRouter);
+app.use(adminRouter);
 
 app.get("/singer/:id", checkCodeMiddleware, (req, res) => {
   const id = req.params.id;
@@ -112,16 +101,8 @@ app.get("/other", checkCodeMiddleware, (req, res) => {
   // res.send("111");
 });
 
-app.get("/", checkCodeMiddleware, (req, res) => {
-  res.send("home");
-});
-
 app.post("/login", checkCodeMiddleware, (req, res) => {
   res.send("login123");
-});
-
-app.all("/test", checkCodeMiddleware, (req, res) => {
-  res.end("test");
 });
 
 app.listen(3000, () => {
