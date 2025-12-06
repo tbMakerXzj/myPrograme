@@ -12,6 +12,9 @@ export const pathConfig: ICommonObj = {
   problem: "/problem",
   demo1: "/demo1",
   demo2: "/demo2",
+  demo3: "/demo3",
+  demo4: "/demo4",
+  demo5: "/demo5",
 };
 
 // 菜单配置
@@ -100,6 +103,24 @@ export const menuConfig: IMenuConfig[] = [
         icon: null,
         children: [],
         name: "demo2",
+      },
+      {
+        key: "demo3",
+        icon: null,
+        children: [],
+        name: "demo3",
+      },
+      {
+        key: "demo4",
+        icon: null,
+        children: [],
+        name: "demo4",
+      },
+      {
+        key: "demo5",
+        icon: null,
+        children: [],
+        name: "demo5",
       },
     ],
   },

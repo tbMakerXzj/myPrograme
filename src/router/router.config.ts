@@ -101,4 +101,34 @@ export const routerConfig: RouterConfig[] = [
       },
     ],
   },
+  {
+    path: "/demo3",
+    exatc: false,
+    children: [
+      {
+        path: "",
+        component: lazy(() => import("@/pages/componentDemo/demo3")),
+      },
+    ],
+  },
+  {
+    path: "/demo4",
+    exatc: false,
+    children: [
+      {
+        path: "",
+        component: lazy(() => import("@/pages/componentDemo/demo4")),
+      },
+    ],
+  },
+  {
+    path: "/demo5",
+    exatc: false,
+    children: [
+      {
+        path: "",
+        component: lazy(() => import("@/pages/componentDemo/demo5")),
+      },
+    ],
+  },
 ];
